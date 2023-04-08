@@ -39,9 +39,19 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+body h1{
+text-align: center;}
+body nav{
+text-align: right;}
 
 a {
   color: var(--link-color);
+}
+footer {
+position: fixed;
+bottom:50px;
+right: 0;
+left: 50px;
 }
 
 /* ### TODO ### Styles for other HTML elements */
