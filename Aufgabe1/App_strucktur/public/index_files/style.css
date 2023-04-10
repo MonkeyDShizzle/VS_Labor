@@ -43,9 +43,12 @@ body h1{
 text-align: center;}
 body nav{
 text-align: right;}
+.tagging{
+  padding-top: 20px;
+}
 body dev{
   background-color: rgb(211, 211, 211);
-  width: 500px;
+  width: 300px;
   height: 500px;
   padding: 960px;
   padding-bottom: 6%;
@@ -54,20 +57,36 @@ a {
   color: var(--link-color);
 }
 .container {
-  padding: 50px;
-  right: 300px;
-  background-color: lightblue;
-  padding: 10px 0;
-  }
-input[type=text] {
-  width: 100%;
-  padding: 15px;
-  height: 20px;
-  margin: 5px 0 10px 0;
+  height: 400px;
+  text-align:center; 
   display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  border-block-end-color: #cdcdcd;
+  vertical-align: middle;
+  line-height: 40px; 
+  }
+
+input{
+  align-self: center;
+  margin: 10 ;
+  width: 100%;
+  height: 41px;
+  background-color: rgb(186, 194, 196);
+  color: #fff;
+  border: 20px;
+  border-radius: 10px;
+  
 }
+
+.button-73 {
+width: 80%;
+height: 20px;
+background-color: #c5bcbc;
+border-radius: 10px;
+box-shadow: #666;
+}
+
+
+
 .Tagging_backround{
   background-color: rgb(211, 211, 211);
   padding: 100px;
