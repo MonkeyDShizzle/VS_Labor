@@ -30,22 +30,14 @@
                 <div class="container">
                     <h3>Add a new GeoTag</h3>
                     <hr>
-                    <label for="latitude" style="text-align: left;"> 
-                        Latitude 
-                    </label> 
-                    <input type="text" id="latitude" name="ftname" style="text-align: center ;"placeholder= "e.g. 49.01379" size="1" required /> 
-                    <label for="longitude" style="text-align: left;"> 
-                        Longitude: 
-                    </label> 
-                    <input type="text" id="longitude" name="mname" style="text-align: center ;"placeholder="e.g. 8.390071" size="1" required /> 
-                    <label for="name"> 
-                        Name: 
-                    </label>  
-                    <input type="text" id="Name" name="ltname" style="text-align: center ;"placeholder="e.g Berlin" size="1"required /> 
-                    <label for="hashTag" style="text-align: left;"> 
-                        HashTag: 
-                        </label>  
-                    <input type="text" id="hashTag" name="ltname" style="text-align: center ;" placeholder="e.g. #ber" size="1"required />
+                    <label for="latitude" style="text-align: left;"> Latitude </label> 
+                    <input type="" id="latitude" name="ftname" style="text-align: center ;"placeholder= "e.g. 49.01379"  maxlength="0" size="1" required /> 
+                    <label for="longitude" style="text-align: left;">Longitude: </label> 
+                    <input type="text" id="longitude" name="mname" style="text-align: center ;"placeholder="e.g. 8.390071" maxlength="0" size="1" required /> 
+                    <label for="name"> Name: </label>  
+                    <input type="text" id="Name" name="ltname" style="text-align: center ;"placeholder="e.g Berlin" minlength="2" maxlength="8" pattern="[a-z]" size="1"required /> 
+                    <label for="hashTag" style="text-align: left;"> HashTag: </label>  
+                    <input type="text" id="hashTag" name="ltname" style="text-align: center ;" placeholder="e.g. #ber" minlength="1"pattern="#" size="1"required />
                     <button class="button-73" role="button">Add Tag</button>
                     <div>
 
@@ -63,12 +55,10 @@
                     <h2 style="text-align: left;">Discovery</h2>
                     <h3>Serch</h3>
                     <hr>
-                    <label for="serach"> 
-                        Search term or keywords: 
-                    </label> 
+                    <label for="serach"> Search term or keywords: </label> 
                     <input class="input_2"type="text" id="search_feld" style="text-align: center" name="ftname" placeholder= "e.g Berlin" size="1" required /> 
                  
-                    <button class="button-73" role="button">Add Tag</button>
+                    <button class="button-7" role="button">Add Tag</button>
                     <div>
                 <!-- ... your code here ... -->
 
@@ -79,9 +69,9 @@
                 <div class="discovery__taglist">
                     
                     <ul class="discovery__results" id="discoveryResults">
-                        <li class="castle" style="width:250px;height:75px;padding: 10px;border:1px solid #000;">Castle (49.01379, 8.404435) #sight</li>
+                        <li class="castle" >Castle (49.01379, 8.404435) #sight</li>
                         <label for="x">.</label>
-                        <li class="iwi" style="width:250px;height:75px;padding: 10px; border:1px solid #000;">IWI (49.01379, 8.390071) #edu</li>
+                        <li class="iwi" >IWI (49.01379, 8.390071) #edu</li>
                     </ul>
                 </div>
 
