@@ -33,10 +33,7 @@ body {
   grid-gap: 10px;
   grid-template-rows: repeat(3,1fr);
 }
-header{
-  
- 
-}
+
 .header__image{
   text-align: left;
   align-items: start;
@@ -92,7 +89,7 @@ a {
   vertical-align: middle;
   line-height: 40px; 
   
-  padding: 20px;
+  padding: 22px;
   border: 1px solid var(--border-color);
 }
 .container_2 {
@@ -196,35 +193,48 @@ footer dev{
 /* ... (Vorheriger CSS-Code) ... */
 
 /* Responsive styles */
-@media (max-width: 1200px) {
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+/* Media Queries for Responsive Design */
+
+@media screen and (max-width: 1200px) {
+  body {
+    width: 100%;
+  }
+
+  main {
     width: 100%;
   }
 }
-@media (max-width: 992px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
+
+@media screen and (max-width: 768px) {
+  body h1 {
+    font-size: 24px;
+    left: 40%;
   }
 
-  .container {
-    grid-column: 1;
-  }
-
-  .container_2 {
-    grid-column: 2;
-  }
-
-  .discovery__map {
-    grid-column: 1;
-    
+  .container, .container_2 {
+    width: 100%;
   }
 }
 
-@media (max-width: 576px) {
-  main {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 480px) {
+  body h1 {
+    font-size: 20px;
+    left: 35%;
+  }
+
+  header nav {
+    top: 80px;
+    font-size: 12px;
+  }
+
+  .container, .container_2 {
+    padding: 10px;
+  }
+
+  .header__image {
+    width: 50px;
+    height: 50px;
   }
 }
-
 
 
