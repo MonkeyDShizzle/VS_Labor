@@ -27,11 +27,23 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   flex-direction: column;
   display: grid;
+  height:  1000px;
+  width: 80%;
   min-height: 100vh;
- 
-  
+  grid-gap: 10px;
+  grid-template-rows: repeat(1,1fr);
+}
+header{
+  grid-row: 1;
+}
+header image{
+  position: absolute;
+  top:50px;
+  right: 0;
+  right: 50px;
 }
 main {
+  grid-row: 3;
   display: grid;
   width: 80%;
   grid-template-columns: 1fr,1fr,1fr;
@@ -39,6 +51,7 @@ main {
   
 }
 body h1{
+grid-row: 2;
 text-align: center;}
 body nav{
 text-align: right;
@@ -152,7 +165,9 @@ li{
       width: 50px;
       height: 300px;
       }
-      
+footer{
+  grid-row: 5;
+}
 footer span{
       position: absolute;
       bottom:50px;
@@ -160,12 +175,12 @@ footer span{
       left: 50px;
       }
 footer dev{
+  
   background-color: rgb(211, 211, 211);
   padding: 93px;
   padding-top: 1%;
-  position: absolute;
-  top: 860px;
-  width: 1920px;
+  display: flex;
+  width: auto;
   height: 50px;
 }
 
