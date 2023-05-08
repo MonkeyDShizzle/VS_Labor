@@ -1,94 +1,102 @@
 <!DOCTYPE html>
-<!-- saved from url=(0101)file:///C:/Users/Bassam%20Sallam/OneDrive/Documents/VS_Labor/Aufgabe1/App_strucktur/public/index.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoTagApp</title>
-    <link rel="stylesheet" href="./index_files/style.css">
+    <link rel="stylesheet" href="./stylesheets/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <header class="header" >
-        <dev class="header_backround" id="hinter1" grid-row: 1;  ></header>
-        <img src="./index_files/location.png" class="header__image"  alt="an image of a map and location">
-        <h1 class="header__title";>GeoTagApp</h1>
-        <nav class="header__navigation" >
-            <a href="file:///C:/Users/Bassam%20Sallam/OneDrive/Documents/VS_Labor/Aufgabe1/App_strucktur/public/index.html#">About</a> | <a href="file:///C:/Users/Bassam%20Sallam/OneDrive/Documents/VS_Labor/Aufgabe1/App_strucktur/public/index.html#">Help</a> | <a href="file:///C:/">Home</a>
+    <header class="header">
+        <img src="./images/location.png" class="header__image" alt="an image of a map and location">
+        <h1 class="header__title">GeoTagApp</h1>
+        <nav class="header__navigation">
+            <a href="#">About</a> | <a href="#">Help</a> | <a href="/">Home</a>
         </nav>
-        
     </header>
-    
-    <main class="main">
-        <section class="main__tagging tagging">
-            
-            
+
+    <main class="main row">
+        <section class="main__tagging col-3" >
+            <h2 id="tagHeader">Tagging</h2>
 
             <!-- ############### VS1Lab 1a Form 1 Start -->
-            <form class="form"id="tag-form" action="file:///C:/tagging" method="post">
-                
-                <div class="container">
-                    <h2 class="tagging"style="text-align: left;">Tagging :</h2>
-                    <h3>Add a new GeoTag</h3>
-                    <hr>
-                    <label for="latitude" style="text-align: left;"> Latitude </label> 
-                    <input type="" id="latitude" name="ftname" style="text-align: center ;"placeholder= "e.g. 49.01379"   size="1" disabled/> 
-                    <label for="longitude" style="text-align: left;">Longitude: </label> 
-                    <input type="text" id="longitude" name="mname" style="text-align: center ;"placeholder="e.g. 8.390071" size="1" disabled /> 
-                    <label for="name"> Name: </label>  
-                    <input type="text" id="Name" name="ltname" style="text-align: center ;"placeholder="e.g Berlin"  minlength="1" maxlength="10"size="1"required /> 
-                    <label for="hashTag" style="text-align: left;"> HashTag: </label>  
-                    <input type="text" id="hashTag" name="ltname" style="text-align: center ;" placeholder="e.g. #ber" minlength="1"pattern="#[A-Za-z]+" maxlength="8" size="1"required />
-                    <button class="button-73" role="button">Add Tag</button>
-                    <div>
+            <form id="tag-form" action="/tagging" method="post">
+                <fieldset id="tagfieldset">
+                    <legend>Add a new GeoTag</legend>
+               
+                        <label class="item">Latitude: </label>
+                        <input type="text" class="item" id="taglatinput" name="latitude" placeholder="e.g. 49.0124" disabled>
+              
+                        <label class="item">Longitude: </label>
+                        <input type="text" class="item" id="taglonginput" name="longitude" placeholder="e.g. 42.013" disabled>
+              
+                        <label class="item">Name: </label>
+                        <input type="text" class="item" id="tagnameinput" name="name" placeholder="e.g. Central Berlin" required minlength="1" maxlength="10">
+               
+                        <label class="item">Hashtag: </label>
+                        <input type="text" class="item" id="taghashtaginput" name="hastag" placeholder="e.g. #ber" pattern="#[A-Za-z]+" required minlength="2" maxlength="10">
+                   
+                        <button class="item" id="tagbutton">Add tag</button>
+
+                </fieldset>
+                <!-- ... your code here ... -->
 
             </form>
             <!-- ############### VS1Lab 1a Form 1 End -->
 
         </section>
 
-        <section class="main__discovery discovery">
+        <section class="main__discovery col-9">
+            <h2 class="discovery__title">Discovery</h2>
 
             <!-- ############### VS1Lab 1a Form 2 Start -->
-            <form class="discovery__search" id="discoveryFilterForm" action="file:///C:/discovery" method="post">
-                
-                <div class="container_2">
-                    <h2 style="text-align: left;">Discovery</h2>
-                    <h3>Serch</h3>
-                    <hr>
-                    <label for="serach"> Search term or keywords: </label> 
-                    <input class="input_2"type="text" id="search_feld" style="text-align: center" name="ftname" placeholder= "e.g Berlin" size="1" required /> 
-                 
-                    <button class="button-7" role="button">Add Tag</button>
-                    <div>
+            <form class="discovery__search" id="discoveryFilterForm" action="/discovery" method="post">
+                <fieldset id="discoveryset">
+                    <legend>Search</legend>
+                        <label class="item">Search term or keywords: </label>
+                        <input type="text" class="item" id="discoveryinput" name="searchbox" minlength="1" placeholder="e.g. Berlin" required>
+                        <button class="item" id="discoverybutton" >Search</button>
+                        
+                </fieldset>
                 <!-- ... your code here ... -->
-
             </form>
             <!-- ############### VS1Lab 1a Form 2 End -->
 
             <div class="discovery__wrapper">
                 <div class="discovery__taglist">
-                    
                     <ul class="discovery__results" id="discoveryResults">
-                        <li class="castle" >Castle (49.01379, 8.404435) #sight</li>
-                        <label for="x">.</label>
-                        <li class="iwi" >IWI (49.01379, 8.390071) #edu</li>
+                        <li class="listitem">Castle (49.01379, 8.404435) #sight</li>
+                        <li class="listitem">IWI (49.01379, 8.390071) #edu</li>
                     </ul>
                 </div>
 
-               
+                <div class="discovery__map" id="mapdiv">
+                    <img src="./images/mapview.jpg" alt="a map with locations" id="map"/>
+                    <span id="resultMap">Result map</span>
+                </div>
             </div>
+            <table hidden>
+                <label class="item" hidden>Latitude: </label>
+                <input type="text" class="item" id="disclatinput" name="latitude" placeholder="e.g. 49.0124" disabled hidden>
+      
+                <label class="item" hidden>Longitude: </label>
+                <input type="text" class="item" id="disclonginput" name="longitude" placeholder="e.g. 42.013" disabled hidden>
+            </table>
         </section>
-        <div class="discovery__map">
-            <img src="./index_files/mapview.jpg"  alt="a map with locations" id="mapView">
-        </div>
+
 
     </main>
 
     <footer class="footer">
-        <dev class="Fuss_backround" id="hinter2" ></dev>
-        <span class ="fuss">(c) 2021/22 HKA_IWI_VSYS</span>
+        <span id="footerspan">(c) 2021/22 HKA_IWI_VSYS</span>
     </footer>
 
+    
+    
+</body>
 
-</body></html>
+</html>
