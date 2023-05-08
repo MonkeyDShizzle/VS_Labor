@@ -30,9 +30,9 @@ html {
 
 :root {
   --link-color: #00B7FF;
-  --background-color: #efefef;
-  --border-color: #cdcdcd;
-  --gray-color: #666;
+  --background-color: #878799;
+  --border-color: #8b8c9c;
+  --gray-color: #413d3d;
 }
 
 
@@ -43,6 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #D0E4F5;
+
 }
 
 a {
@@ -149,6 +151,7 @@ input:valid{
 button{
   height: 4vh;
   width: 18vw;
+
   transition: transform 500ms;
   transition-timing-function: cubic-bezier(.75,-3,.25,4);
 }
@@ -214,8 +217,13 @@ li{
   height: auto;
   width: auto;
   min-height: 40vh;
+  
+  transition: transform 500ms;
+  transition-timing-function: cubic-bezier(.75,-3,.25,4);
 }
-
+#map:hover{
+  transform:scale(1.1);
+}
 /* ### TODO ### Styles for Footer Component */
 
 /* ... your code here ... */
