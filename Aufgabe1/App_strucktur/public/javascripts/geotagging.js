@@ -63,7 +63,9 @@ class LocationHelper {
  * A class to help using the MapQuest map service.
  */
 class MapManager {
-    #apiKey = '';
+    #apiKey = ``;
+
+    '';
 
     /**
      * Create a new MapManager instance.
@@ -90,7 +92,7 @@ class MapManager {
         let tagList = `You,${latitude},${longitude}`;
         tagList += tags.reduce((acc, tag) => `${acc}|${tag.name},${tag.latitude},${tag.longitude}`, "");
 
-        const mapQuestUrl = `https://www.mapquestapi.com/staticmap/v4/getmap?key=${this.#apiKey}&size=600,400&zoom=${zoom}&center=${latitude},${longitude}&pois=${tagList}`;
+        const mapQuestUrl = `https://www.mapquestapi.com/staticmap/v5/map?key=${this.#apiKey}&size=600,400&zoom=${zoom}&center=${latitude},${longitude}&pois=${tagList}`;
         console.log("Generated MapQuest URL:", mapQuestUrl);
 
         return mapQuestUrl;
@@ -125,7 +127,7 @@ function updateLocation() {
             taglatinginput.setAttribute("value",latitude);
             taglonginput.setAttribute("value",longitude);
             //Map generierung
-            var mapvar = new MapManager("Pk3QHC31GRIoeNGFBPEYLR6hW9dRCWNc");            //Schlüssel von der WEB API 
+            var mapvar = new MapManager("CquR8AxqHTiVhknCWjjY54wUEul9hv8J");            //Schlüssel von der WEB API 
             let URL = mapvar.getMapUrl(latitude,longitude, [], 10);   
             let map = document.getElementById("map");
             map.src = URL;
@@ -146,4 +148,4 @@ document.addEventListener("DOMContentLoaded", () => {updateLocation();});
 // ... your code here ...
 
 // Wait for the page to fully load its DOM content, then call updateLocation
-document.addEventListener("DOMContentLoaded", () => { updateLocation(); });   
+//document.addEventListener("DOMContentLoaded", () => { updateLocation(); });   
