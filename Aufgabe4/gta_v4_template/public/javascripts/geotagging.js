@@ -67,7 +67,7 @@ function updatePagination(searchresult) {
 }
 
 function apiMapUpdate(){
-    let mapManager = new MapManager("yaMPFXET2G0vG84h8G9MxGQBo2a35oVc");
+    let mapManager = new MapManager("CquR8AxqHTiVhknCWjjY54wUEul9hv8J");
     let lat = document.getElementById("taglatinput").getAttribute("value");
     let lon = document.getElementById("taglonginput").getAttribute("value"); 
     let mapUrl = mapManager.getMapUrl(lat, lon, globalArray, 15);
