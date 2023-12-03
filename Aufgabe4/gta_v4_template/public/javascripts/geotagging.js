@@ -6,7 +6,7 @@ let maxPs;
 
 var nextBtn = document.getElementById("pagination-right");
 var preBtn = document.getElementById("pagination-left");
-
+// AJAX GET-Anfrage
 async function initialize() {
     globalArray = await fetch("api/geotags", {
         method: "GET"
@@ -18,7 +18,7 @@ async function initialize() {
     updateLocation();
     console.log(`Initialization finished: ${JSON.stringify(globalArray)}`);
 }
-
+// Kordienaten an GeoTag Api weiter gegeben
 function mapUpdate(latitude, longitude) {
     let nearGeoTaglist = JSON.parse(document.getElementById("map").getAttribute("data-tags"));
     let mapManager = new MapManager("CquR8AxqHTiVhknCWjjY54wUEul9hv8J");
@@ -26,6 +26,7 @@ function mapUpdate(latitude, longitude) {
     document.getElementById("map").setAttribute("src", mapUrl);
 }
 
+// input wurde vom Html aufgerufen
 function updateLocation() {
     if (document.getElementById("taglatinput").getAttribute("value") === "" ||
         document.getElementById("taglonginput").getAttribute("value") === "") {
@@ -41,7 +42,7 @@ function updateLocation() {
 }
 
 
-
+// Navigation aktualiesieren
 function updatePagination(searchresult) {
     document.getElementById("discoveryResults").innerHTML = "";
     if (searchresult !== undefined) {
@@ -65,7 +66,7 @@ function updatePagination(searchresult) {
     else nextBtn.disabled = false;
 
 }
-
+    // APi Map Update
 function apiMapUpdate(){
     let mapManager = new MapManager("CquR8AxqHTiVhknCWjjY54wUEul9hv8J");
     let lat = document.getElementById("taglatinput").getAttribute("value");
@@ -75,6 +76,7 @@ function apiMapUpdate(){
 
     // window.location.reload();
 }
+        //AJAX POST-Anfrage
 async function postAdd(geotag) {
     let response = await fetch("api/geotags", {
         method: "POST",
@@ -99,7 +101,7 @@ preBtn.addEventListener("click", function (e) {
     }
 });
 
-
+// Event-Listener für das Tagging-Formular
 document.getElementById("tagbutton").addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -120,14 +122,15 @@ document.getElementById("tagbutton").addEventListener("click", (e) => {
     window.location.reload();
 }, true);
 
+// Event-Listener für das Discovery-Formular
 document.getElementById("discoverybutton").addEventListener("click", async (e) => {
     e.preventDefault();
 
     let formInput = document.getElementById("discoveryinput").value;
     console.log(`Input of discovery-form: ${formInput}`);
-
+    
     let result;
-
+    // Abschnitt, um das Discovery-Formular zu verarbeiten und per AJAX zu senden
     if(typeof formInput === "number") {
         result = await fetch(`api/geotags?latitude=${formInput}`)
             .then(response => response.json());
